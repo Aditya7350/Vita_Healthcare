@@ -20,17 +20,17 @@ function App() {
       try {
         const [logoRes, footerRes] = await Promise.all([
           fetch('/assets/logo.png'),
-          fetch('/assets/Footer.png')
+          fetch('/assets/footer.png')
         ]);
 
         let logo = null;
         let footer = null;
 
-        if (logoRes.ok) {
+        if (logoRes.ok && logoRes.headers.get('content-type')?.includes('image')) {
           const blob = await logoRes.blob();
           logo = await blob.arrayBuffer();
         }
-        if (footerRes.ok) {
+        if (footerRes.ok && footerRes.headers.get('content-type')?.includes('image')) {
           const blob = await footerRes.blob();
           footer = await blob.arrayBuffer();
         }

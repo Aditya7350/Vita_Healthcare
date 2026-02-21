@@ -40,8 +40,8 @@ export async function processPdf({ pdfFile, logoBuffer, footerBuffer, footerText
         if (logoImage) {
             const margin = 1;
             const headerTopPadding = 5;
-            const maxLogoWidth = 300;
-            const maxLogoHeight = 280;
+            const maxLogoWidth = 350;
+            const maxLogoHeight = 300;
 
             const { width: imgW, height: imgH } = logoImage.size();
 
